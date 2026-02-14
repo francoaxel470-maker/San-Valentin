@@ -1,1 +1,17 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Document</title>\n    <link rel="stylesheet" href="styles.css">\n</head>\n<body>\n    <header>\n        <h1>Welcome to San Valentin</h1>\n    </header>\n    <main>\n        <section>\n            <h2>About</h2>\n            <p>This is a short description of the project.</p>\n        </section>\n        <section>\n            <h2>Features</h2>\n            <ul>\n                <li>Feature 1</li>\n                <li>Feature 2</li>\n                <li>Feature 3</li>\n            </ul>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2026 San Valentin Project</p>\n    </footer>\n</body>\n</html>\n
+.San_Valentin {
+
+position: absolute;
+
+width: 90%;
+
+ font-size: 2rem;
+
+ font-family: "Te Amo";
+
+ height: var(--letter-love);
+
+ transform: translateX(-50%);
+
+ background: var (--letter);
+
+}
