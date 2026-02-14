@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceptación</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff69b4;
+            text-align: center;
+        }
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: translate(-50%, -50%) rotate(45deg);
+            animation: float 5s infinite;
+        }
+        .heart::before, .heart::after {
+            content: "";
+            position: absolute;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            width: 100px;
+            height: 100px;
+            top: -50px;
+            left: 0;
+        }
+        .heart::after {
+            width: 100px;
+            height: 100px;
+            left: 50px;
+            top: 0;
+        }
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-30px); }
+            100% { transform: translate(-50%, -50%) translateY(0); }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffcc00;
+            opacity: 0.5;
+            animation: fall 3s infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Gracias amorcito, te amo Hanita</h1>
+    <div class="heart"></div>
+    <script>
+        // Generate confetti
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            document.body.appendChild(confetti);
+            setTimeout(() => {
+                confetti.remove();
+            }, 3000);
+        }
+        setInterval(createConfetti, 100);
+    </script>
+</body>
+</html>
